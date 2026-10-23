@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: compra-de-jugadores
+    runtime: python
+    plan: free
+    repo: https://github.com/dyeison25/CompraDeJugadores
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: waitress-serve --host=0.0.0.0 --port=$PORT app:app
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_BACKEND
+        value: postgresql
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: ALLOW_UPLOADS
+        value: "0"

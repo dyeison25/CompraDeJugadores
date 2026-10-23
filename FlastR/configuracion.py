@@ -14,6 +14,7 @@ def configurar(app, ajustes=None):
     app.config.update(
         DATABASE_URL=valor("DATABASE_URL"),
         SESSION_COOKIE_SECURE=valor("COOKIE_SECURE") == "1",
+        ALLOW_UPLOADS=valor("ALLOW_UPLOADS", "1") == "1",
     )
     clave = valor("SECRET_KEY")
     if clave:
@@ -27,3 +28,8 @@ def configurar(app, ajustes=None):
     app.config["DATABASE_BACKEND"] = backend
     app.config["SEED_DEMO"] = backend == "sqlite"
     app.config.update(ajustes)
+    if os.environ.get("RENDER") == "true" and not app.config.get("TESTING"):
+        if app.config["DATABASE_BACKEND"] != "postgresql" or not app.config.get("DATABASE_URL"):
+            raise RuntimeError("Configura DATABASE_BACKEND=postgresql y DATABASE_URL en Render.")
+        if not app.config.get("SECRET_KEY"):
+            raise RuntimeError("Configura una SECRET_KEY persistente en Render.")

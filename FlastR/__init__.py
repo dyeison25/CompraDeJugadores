@@ -59,12 +59,19 @@ def create_app(test_config=None):
 
     @app.before_request
     def cargar_usuario_y_proteger_formularios():
+        if request.endpoint == "salud":
+            return None
         g.usuario = auth.obtener(session.get("usuario_id")) if session.get("usuario_id") else None
         if request.method in {"POST", "PUT", "PATCH", "DELETE"}:
             recibido = request.form.get("_csrf", "")
             esperado = session.get("_csrf", "")
             if not esperado or not secrets.compare_digest(recibido, esperado):
                 abort(400, description="El formulario caducó. Recarga la página e inténtalo de nuevo.")
+
+    @app.get("/healthz")
+    def salud():
+        # Comprueba el proceso web sin despertar Neon en cada sondeo.
+        return {"status": "ok"}
 
     @app.get("/static/uploads/<filename>")
     def foto_subida(filename):

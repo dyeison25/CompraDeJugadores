@@ -4,6 +4,10 @@ Aplicación web en español con Flask, PostgreSQL en Neon y SQLAlchemy como ORM.
 
 La configuración y arquitectura actuales están en [Neon y SQLAlchemy](docs/NEON.md). Cambiar de base no traslada registros automáticamente.
 
+## Desplegar en Render
+
+Consulta [la guia de Render](docs/RENDER.md). El repositorio incluye `render.yaml` para el plan gratuito, usando Neon y fotos por URL HTTPS.
+
 ## Iniciar en Windows / PowerShell
 
 Desde la carpeta del proyecto:

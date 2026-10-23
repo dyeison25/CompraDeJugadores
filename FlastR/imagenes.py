@@ -12,6 +12,8 @@ def guardar_foto(archivo):
     """Decodifica y recodifica la imagen; no confía en su extensión ni en su MIME."""
     if not archivo or not archivo.filename:
         return None
+    if not current_app.config.get("ALLOW_UPLOADS", True):
+        raise ErrorDominio("Utiliza una URL HTTPS para la foto del jugador.")
     try:
         with warnings.catch_warnings():
             warnings.simplefilter("error", Image.DecompressionBombWarning)
