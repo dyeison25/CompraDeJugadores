@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1390" height="1410" viewBox="0 0 1390 1410" role="img" aria-labelledby="title desc">
+<title id="title">FICHAJE / DIAGRAMA DE CASOS DE USO</title><desc id="desc">Tres actores. Un mercado. Compras simuladas y administración según el rol.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#719365" stroke-width="1.4"/></marker></defs>
+<rect width="1390" height="1410" fill="#f7f9f3"/>
+<text x="40" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#213b2d" text-anchor="start">FICHAJE / DIAGRAMA DE CASOS DE USO</text>
+<text x="40" y="69" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#708069" text-anchor="start">Tres actores. Un mercado. Compras simuladas y administración según el rol.</text>
+<rect x="215" y="104" width="1140" height="1230" rx="9" fill="#fff" stroke="#c0d0b1" stroke-width="1.3"/>
+<text x="239" y="134" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#213b2d" text-anchor="start">SISTEMA FICHAJE</text>
+<rect x="250" y="156" width="1068" height="423" rx="9" fill="#f6f8f0" stroke="#e2e9d7" stroke-width="1.3"/>
+<text x="275" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#6a8554" text-anchor="start">MERCADO Y ACCESO</text>
+<rect x="250" y="617" width="1068" height="223" rx="9" fill="#f0f5e5" stroke="#e2e9d7" stroke-width="1.3"/>
+<text x="275" y="645" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#6a8554" text-anchor="start">ÁREA DE USUARIO</text>
+<rect x="250" y="882" width="1068" height="410" rx="9" fill="#f6f8f0" stroke="#e2e9d7" stroke-width="1.3"/>
+<text x="275" y="910" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#6a8554" text-anchor="start">ÁREA DE ADMINISTRACIÓN</text>
+<circle cx="92" cy="267" r="15" fill="#eaf0dc" stroke="#173e2d" stroke-width="2"/>
+<path d="M92 282v42m-27-26h54m-27 26-24 32m24-32 24 32" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="92" y="383" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#213b2d" text-anchor="middle">Visitante</text>
+<circle cx="92" cy="690" r="15" fill="#eaf0dc" stroke="#173e2d" stroke-width="2"/>
+<path d="M92 705v42m-27-26h54m-27 26-24 32m24-32 24 32" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="92" y="806" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#213b2d" text-anchor="middle">Usuario</text>
+<circle cx="92" cy="1090" r="15" fill="#eaf0dc" stroke="#173e2d" stroke-width="2"/>
+<path d="M92 1105v42m-27-26h54m-27 26-24 32m24-32 24 32" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="92" y="1206" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#213b2d" text-anchor="middle">Administrador</text>
+<path d="M119 308L350 227" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 308L350 303" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 308L350 379" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 308L350 455" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 731L350 227" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 731L350 303" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 731L350 455" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 731L350 531" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 731L350 690" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 731L350 775" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 227" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 303" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 455" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 531" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 978" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 1058" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 1138" fill="none" stroke="#719365" stroke-width="1.5"/>
+<path d="M119 1131L350 1218" fill="none" stroke="#719365" stroke-width="1.5"/>
+<ellipse cx="550" cy="227" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="232.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Explorar y filtrar mercado</text>
+<ellipse cx="550" cy="303" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="308.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Consultar ficha de jugador</text>
+<ellipse cx="550" cy="379" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="384.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Registrarse</text>
+<ellipse cx="550" cy="455" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="460.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Iniciar sesión</text>
+<ellipse cx="550" cy="531" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="536.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Cerrar sesión</text>
+<text x="857" y="278" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#607b49" text-anchor="start">ACCESO PÚBLICO</text>
+<text x="857" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7f5b" text-anchor="start">Todos pueden explorar y consultar fichas.</text>
+<text x="857" y="332" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7f5b" text-anchor="start">El visitante puede crear una cuenta.</text>
+<text x="857" y="450" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#607b49" text-anchor="start">SESIONES</text>
+<text x="857" y="477" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7f5b" text-anchor="start">Usuario y administrador acceden con</text>
+<text x="857" y="498" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7f5b" text-anchor="start">correo y contraseña. El rol determina</text>
+<text x="857" y="519" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6b7f5b" text-anchor="start">qué acciones pueden realizar.</text>
+<ellipse cx="550" cy="690" rx="200.0" ry="33" fill="#e7f1d0" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="686.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Comprar jugador</text>
+<text x="550" y="704.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">(confirmación simulada)</text>
+<ellipse cx="1090" cy="690" rx="177.5" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="1090" y="686.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Validar disponibilidad</text>
+<text x="1090" y="704.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">y versión del precio</text>
+<path d="M750 690H907" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="795" y="676" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#62834b" text-anchor="start">«include»</text>
+<ellipse cx="550" cy="775" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="780.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Consultar mis fichajes</text>
+<text x="913" y="784" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#678050" text-anchor="start">Precondición: sesión de usuario.</text>
+<ellipse cx="550" cy="978" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="983.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Consultar panel de administración</text>
+<ellipse cx="550" cy="1058" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="1063.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Agregar jugador</text>
+<ellipse cx="550" cy="1138" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="1143.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Editar jugador disponible</text>
+<ellipse cx="550" cy="1218" rx="200.0" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="550" y="1223.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Eliminar jugador disponible</text>
+<ellipse cx="1090" cy="1098" rx="177.5" ry="33" fill="#fff" stroke="#719365" stroke-width="1.4"/>
+<text x="1090" y="1103.0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#213b2d" text-anchor="middle">Validar ficha y foto</text>
+<path d="M750 1058H827V1088H907" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M750 1138H827V1108H907" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="827" y="1050" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#62834b" text-anchor="start">«include»</text>
+<text x="827" y="1158" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#62834b" text-anchor="start">«include»</text>
+<text x="888" y="964" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#678050" text-anchor="start">Precondición: sesión de administrador.</text>
+<text x="888" y="990" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#678050" text-anchor="start">Las publicaciones vendidas se conservan</text>
+<text x="888" y="1011" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#678050" text-anchor="start">para mantener el historial de compras.</text>
+<text x="242" y="1317" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6c7c61" text-anchor="start">Las compras guardan el historial y retiran la publicación. No existe cobro real ni actor de pagos.</text>
+<text x="40" y="1374" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6c7c61" text-anchor="start">«include»: comportamiento obligatorio dentro del caso de uso. Tener el rol y la sesión adecuados es una precondición.</text>
+</svg>

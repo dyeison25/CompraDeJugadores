@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, csrf with context %}
+{% block title %}{{ 'Crear cuenta' if registro else 'Iniciar sesión' }} — Fichaje{% endblock %}
+{% block content %}
+<div class="container auth-layout">
+<section class="auth-story"><span class="live-label"><span></span> LA PASIÓN NOS CONECTA</span><h1>TU EQUIPO.<br>TUS REGLAS.<br><em>TU FICHAJE.</em></h1><p>Cada gran historia empieza con una decisión.<br>La tuya empieza aquí.</p><div class="auth-pitch" aria-hidden="true"><div></div>{{ icon('ball') }}</div><div class="auth-story-footer">{{ icon('trophy') }} Construye un equipo a la altura de tus sueños.</div></section>
+<section class="auth-form-wrap"><a class="back-link" href="{{ url_for('web.mercado') }}">← Volver al mercado</a><p class="eyebrow">{{ 'FICHA POR NOSOTROS' if registro else 'TU PRÓXIMA JUGADA' }}</p><h2>{{ 'Entra al juego.' if registro else 'Qué bueno verte.' }}</h2><p class="muted">{{ 'Crea tu cuenta y empieza a construir tu equipo ideal.' if registro else 'Inicia sesión para continuar con tu equipo.' }}</p>
+<form class="stack-form" method="post">{{ csrf() }}
+{% if registro %}<label>Nombre completo<input name="nombre" value="{{ datos.get('nombre','') }}" placeholder="¿Cómo te llamas?" required minlength="2" maxlength="80" autocomplete="name"></label>{% endif %}
+<label>Correo electrónico<input type="email" name="email" value="{{ datos.get('email','') }}" placeholder="tu@correo.com" required maxlength="254" autocomplete="email"></label>
+<label>Contraseña<span class="password-field"><input id="password" type="password" name="password" placeholder="{{ 'Mínimo 8 caracteres' if registro else 'Tu contraseña' }}" required {{ 'minlength=8' if registro }} maxlength="128" autocomplete="{{ 'new-password' if registro else 'current-password' }}"><button type="button" class="icon-button" data-toggle-password="password" aria-label="Mostrar contraseña">{{ icon('eye') }}</button></span></label>
+{% if registro %}<label>Confirmar contraseña<input type="password" name="confirmar" placeholder="Repite tu contraseña" required minlength="8" maxlength="128" autocomplete="new-password"></label>{% endif %}
+<button class="button button-dark button-full" type="submit">{{ 'Crear mi cuenta' if registro else 'Iniciar sesión' }} {{ icon('arrow') }}</button>
+</form>
+<p class="auth-switch">{{ '¿Ya tienes cuenta?' if registro else '¿Todavía no tienes cuenta?' }} <a href="{{ url_for('web.login') if registro else url_for('web.register') }}">{{ 'Inicia sesión' if registro else 'Regístrate gratis' }}</a></p>
+<div class="form-note">{{ icon('lock') }} <span>{{ 'Tu cuenta será de usuario. Elige jugadores y realiza fichajes simulados.' if registro else 'Usa tu correo y contraseña. Tu cuenta te llevará al mercado o al panel de administración.' }}</span></div>
+</section></div>
+{% endblock %}

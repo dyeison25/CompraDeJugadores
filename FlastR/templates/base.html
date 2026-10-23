@@ -1,0 +1,38 @@
+{% from 'macros.html' import icon, csrf with context %}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b2c">
+  <meta name="description" content="Fichaje: construye tu equipo ideal. Explora jugadores, descubre talento y vive tu propio mercado de fichajes.">
+  <title>{% block title %}Fichaje — Tu próximo gran jugador{% endblock %}</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ url_for('web.mercado') }}" aria-label="Fichaje, inicio"><span class="brand-symbol">{{ icon('ball') }}</span><span>fichaje<span class="brand-period">.</span><small>THE FOOTBALL MARKET</small></span></a>
+    <nav class="primary-nav" aria-label="Navegación principal">
+      <a class="{{ 'active' if request.endpoint in ['web.mercado','web.detalle','web.comprar'] }}" href="{{ url_for('web.mercado') }}">Mercado</a>
+      {% if usuario and usuario.es_admin %}<a class="{{ 'active' if request.endpoint and 'admin' in request.endpoint }}" href="{{ url_for('web.admin') }}">Administración</a>
+      {% else %}<a class="{{ 'active' if request.endpoint == 'web.mis_fichajes' }}" href="{{ url_for('web.mis_fichajes') }}">Mis fichajes</a>{% endif %}
+      <a href="{{ url_for('web.mercado') }}#como-funciona">Cómo funciona</a>
+    </nav>
+    <div class="account-nav">
+      {% if usuario %}<span class="account-name"><span class="avatar">{{ usuario.nombre[:1]|upper }}</span><span>{{ usuario.nombre.split()[0] }}<small>{{ 'Administrador' if usuario.es_admin else 'Manager' }}</small></span></span>
+      <form action="{{ url_for('web.logout') }}" method="post">{{ csrf() }}<button class="icon-button" title="Cerrar sesión" aria-label="Cerrar sesión">{{ icon('logout') }}</button></form>
+      {% else %}<a class="login-link" href="{{ url_for('web.login') }}">Iniciar sesión</a><a class="button button-dark register-link" href="{{ url_for('web.register') }}">Crear cuenta {{ icon('arrow') }}</a>{% endif %}
+    </div>
+  </div>
+</header>
+<main id="contenido">
+  {% with mensajes = get_flashed_messages(with_categories=True) %}{% if mensajes %}<div class="container flash-stack" aria-live="polite">{% for categoria, mensaje in mensajes %}<div class="flash flash-{{ categoria }}" role="{{ 'alert' if categoria == 'error' else 'status' }}">{{ icon('check' if categoria == 'success' else 'shield') }}<span>{{ mensaje }}</span><button type="button" class="icon-button" data-dismiss aria-label="Cerrar aviso">{{ icon('close') }}</button></div>{% endfor %}</div>{% endif %}{% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<footer class="site-footer"><div class="container footer-top"><a class="brand" href="{{ url_for('web.mercado') }}">{{ icon('ball') }} fichaje<span class="brand-period">.</span></a><p>El talento se descubre. Tu equipo se construye.</p><a href="{{ url_for('web.diagramas') }}">Diagramas del proyecto {{ icon('arrow') }}</a></div><div class="container footer-bottom"><span>© 2026 Fichaje. Hecho para quienes viven el fútbol.</span><span>Proyecto académico · Fichajes y valores simulados</span></div></footer>
+</body>
+</html>

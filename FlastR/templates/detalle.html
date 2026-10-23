@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, foto with context %}
+{% block title %}{{ jugador.nombre }} — Fichaje{% endblock %}
+{% block content %}
+<div class="container page-space"><a class="back-link" href="{{ url_for('web.mercado') }}#mercado">← Volver al mercado</a><div class="detail-layout"><div class="detail-art art-{{ jugador.id % 4 }}"><span class="position-tag">{{ jugador.posicion }}</span><span class="shirt-number">{{ '%02d'|format(jugador.dorsal) }}</span>{{ foto(jugador, 'detail-portrait', False) }}<span class="detail-nationality">{{ jugador.nacionalidad }}</span></div><div class="detail-copy"><p class="eyebrow">TU PRÓXIMA GRAN JUGADA</p><p class="availability"><i></i>{{ 'Disponible para fichar' if jugador.estado == 'disponible' else 'Fichaje completado' }}</p><h1>{{ jugador.nombre }}</h1><p class="detail-club"><span class="club-badge">{{ jugador.equipo[:2]|upper }}</span>{{ jugador.equipo }}</p><p class="detail-description">{{ jugador.descripcion or 'Descubre el talento que puede marcar la diferencia en tu equipo.' }}</p><dl class="detail-facts"><div><dt>POSICIÓN</dt><dd>{{ jugador.posicion }}</dd></div><div><dt>EDAD</dt><dd>{{ jugador.edad }} años</dd></div><div><dt>NACIONALIDAD</dt><dd>{{ jugador.nacionalidad }}</dd></div></dl><div class="detail-price"><span class="caption">VALOR DE FICHAJE</span><strong>{{ jugador.precio_centimos|euros }}</strong></div>
+{% if jugador.estado != 'disponible' %}<div class="notice">{{ icon('check') }} Este jugador ya encontró equipo.</div>
+{% elif usuario and usuario.es_admin %}<a class="button button-dark" href="{{ url_for('web.editar_jugador', jugador_id=jugador.id) }}">{{ icon('edit') }} Editar jugador</a>
+{% else %}<a class="button button-lime button-wide" href="{{ url_for('web.comprar', jugador_id=jugador.id) }}">Comprar jugador {{ icon('arrow') }}</a>{% endif %}
+<p class="small muted">Fichaje simulado para fines académicos. No se realizan cobros reales.</p></div></div></div>
+{% endblock %}

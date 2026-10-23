@@ -1,0 +1,58 @@
+@startuml
+left to right direction
+title Fichaje — Diagrama de casos de uso
+skinparam backgroundColor #F7F9F3
+skinparam actorStyle stickman
+skinparam usecaseBackgroundColor #FFFFFF
+skinparam usecaseBorderColor #52754E
+skinparam ArrowColor #52754E
+
+actor Visitante
+actor Usuario
+actor Administrador
+
+rectangle "Sistema Fichaje" {
+  usecase "Explorar y filtrar mercado" as Explorar
+  usecase "Consultar ficha del jugador" as Ficha
+  usecase "Registrarse" as Registro
+  usecase "Iniciar sesión" as Login
+  usecase "Cerrar sesión" as Logout
+  usecase "Comprar jugador\n(compra simulada)" as Comprar
+  usecase "Validar disponibilidad\ny versión del precio" as ValidarCompra
+  usecase "Consultar mis fichajes" as Historial
+  usecase "Consultar panel\nde administración" as Panel
+  usecase "Agregar jugador" as Agregar
+  usecase "Editar jugador disponible" as Editar
+  usecase "Eliminar jugador disponible" as Eliminar
+  usecase "Validar ficha y foto" as ValidarFicha
+}
+Visitante -- Explorar
+Visitante -- Ficha
+Visitante -- Registro
+Visitante -- Login
+Usuario -- Explorar
+Usuario -- Ficha
+Usuario -- Login
+Usuario -- Logout
+Usuario -- Comprar
+Usuario -- Historial
+Administrador -- Explorar
+Administrador -- Ficha
+Administrador -- Login
+Administrador -- Logout
+Administrador -- Panel
+Administrador -- Agregar
+Administrador -- Editar
+Administrador -- Eliminar
+Comprar ..> ValidarCompra : <<include>>
+Agregar ..> ValidarFicha : <<include>>
+Editar ..> ValidarFicha : <<include>>
+note bottom of Comprar
+Precondición: sesión de usuario.
+Requiere confirmación explícita.
+end note
+note bottom of Panel
+Precondición: sesión de administrador.
+Las publicaciones vendidas se conservan.
+end note
+@enduml

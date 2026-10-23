@@ -1,0 +1,110 @@
+@startuml
+title Fichaje — Diagrama de clases
+skinparam backgroundColor #F7F9F3
+skinparam classAttributeIconSize 0
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #52754E
+skinparam ArrowColor #52754E
+hide empty members
+
+package FlastR {
+  class "Aplicación web" as Web <<capa web>> {
+    + create_app(config): Flask
+    + rutas HTTP y formularios
+    + requiere_rol(rol)
+    + guardar_foto(archivo): str
+  }
+}
+package "domain.entidades" {
+  class Usuario {
+    + id: int
+    + nombre: str
+    + email: str
+    + password_hash: str
+    + rol: str
+    + es_admin: bool {readOnly}
+  }
+  class Jugador {
+    + id: int
+    + nombre: str
+    + equipo: str
+    + nacionalidad: str
+    + edad: int
+    + posicion: str
+    + precio_centimos: int
+    + foto: str
+    + dorsal: int
+    + descripcion: str
+    + estado: str
+    + destacado: int
+    + version: int
+    + precio: Decimal {readOnly}
+  }
+  class Compra {
+    + id: int
+    + usuario_id: int
+    + jugador_id: int
+    + precio_centimos: int
+    + fecha: str
+    + jugador_nombre: str
+    + equipo: str
+    + foto: str
+  }
+}
+package "domain.servicio" {
+  class BaseDatos {
+    + ruta: str
+    + conectar(): contextmanager
+    + inicializar()
+  }
+  class AutenticacionServicio {
+    + db: BaseDatos
+    + obtener(usuario_id): Usuario
+    + registrar(nombre, email, password): Usuario
+    + crear_admin(nombre, email, password): Usuario
+    + iniciar_sesion(email, password): Usuario
+    + exigir_rol(usuario_id, rol): Usuario
+  }
+  class JugadorServicio {
+    + db: BaseDatos
+    + auth: AutenticacionServicio
+    + listar(filtros): list[Jugador]
+    + obtener(jugador_id): Jugador
+    + equipos(): list[str]
+    + validar(datos, foto): dict
+    + agregar(admin_id, datos, foto): Jugador
+    + editar(admin_id, jugador_id, datos, foto, version): Jugador
+    + eliminar(admin_id, jugador_id, version)
+  }
+  class CompraServicio {
+    + db: BaseDatos
+    + auth: AutenticacionServicio
+    + comprar(usuario_id, jugador_id, version_esperada): int
+    + historial(usuario_id): list[Compra]
+    + resumen(admin_id): dict
+  }
+}
+Web ..> AutenticacionServicio
+Web ..> JugadorServicio
+Web ..> CompraServicio
+AutenticacionServicio --> BaseDatos
+JugadorServicio --> BaseDatos
+CompraServicio --> BaseDatos
+JugadorServicio --> AutenticacionServicio
+CompraServicio --> AutenticacionServicio
+AutenticacionServicio ..> Usuario
+JugadorServicio ..> Jugador
+CompraServicio ..> Compra
+Usuario "1" -- "0..*" Compra : realiza
+Jugador "1" -- "0..1" Compra : corresponde a
+note bottom of Usuario
+rol: admin | usuario
+El registro público solo crea usuarios.
+No existen subclases para los roles.
+end note
+note bottom of Compra
+Guarda precio y ficha al comprar.
+La compra es simulada y atómica.
+jugador_id es UNIQUE.
+end note
+@enduml

@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1510" height="1400" viewBox="0 0 1510 1400" role="img" aria-labelledby="title desc">
+<title id="title">FICHAJE / DIAGRAMA DE CLASES</title><desc id="desc">Arquitectura: FlastR → domain.servicio → domain.entidades y BaseDatos. Firmas resumidas.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#719365" stroke-width="1.4"/></marker></defs>
+<rect width="1510" height="1400" fill="#f7f9f3"/>
+<text x="40" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#213b2d" text-anchor="start">FICHAJE / DIAGRAMA DE CLASES</text>
+<text x="40" y="69" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#708069" text-anchor="start">Arquitectura: FlastR → domain.servicio → domain.entidades y BaseDatos. Firmas resumidas.</text>
+<rect x="22" y="798" width="1165" height="515" rx="9" fill="#eff3e7" stroke="#d1debf" stroke-width="1.3"/>
+<text x="44" y="824" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#6b8754" text-anchor="start">domain.entidades</text>
+<rect x="480" y="102" width="540" height="162" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="480" y="102" width="540" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="750.0" y="123" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«capa de presentación»</text>
+<text x="750.0" y="146" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">FlastR · aplicación web</text>
+<path d="M480 183H1020" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="496" y="205" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ create_app(config): Flask</text>
+<text x="496" y="227" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ rutas, sesiones, formularios y plantillas</text>
+<text x="496" y="249" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ requiere_rol(rol), guardar_foto(archivo)</text>
+<path d="M750 264V294H215V341" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M750 264V294H605V341" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M750 264V294H995V341" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="40" y="322" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#6b8754" text-anchor="start">domain.servicio</text>
+<rect x="45" y="345" width="340" height="227" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="45" y="345" width="340" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="215.0" y="366" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«servicio»</text>
+<text x="215.0" y="389" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">AutenticacionServicio</text>
+<text x="61" y="432" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ db: BaseDatos</text>
+<path d="M45 447H385" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="61" y="469" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ obtener(id): Usuario</text>
+<text x="61" y="491" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ registrar(...): Usuario</text>
+<text x="61" y="513" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ crear_admin(...): Usuario</text>
+<text x="61" y="535" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ iniciar_sesion(...): Usuario</text>
+<text x="61" y="557" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ exigir_rol(id, rol): Usuario</text>
+<rect x="435" y="345" width="340" height="292" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="435" y="345" width="340" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="605.0" y="366" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«servicio»</text>
+<text x="605.0" y="389" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">JugadorServicio</text>
+<text x="451" y="432" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ db: BaseDatos</text>
+<text x="451" y="453" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ auth: AutenticacionServicio</text>
+<path d="M435 468H775" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="451" y="490" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ listar(filtros): list[Jugador]</text>
+<text x="451" y="512" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ obtener(id): Jugador</text>
+<text x="451" y="534" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ equipos(): list[str]</text>
+<text x="451" y="556" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ validar(datos, foto): dict</text>
+<text x="451" y="578" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ agregar(...): Jugador</text>
+<text x="451" y="600" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ editar(..., version): Jugador</text>
+<text x="451" y="622" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ eliminar(..., version)</text>
+<rect x="825" y="345" width="340" height="204" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="825" y="345" width="340" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="995.0" y="366" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«servicio»</text>
+<text x="995.0" y="389" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">CompraServicio</text>
+<text x="841" y="432" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ db: BaseDatos</text>
+<text x="841" y="453" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ auth: AutenticacionServicio</text>
+<path d="M825 468H1165" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="841" y="490" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ comprar(..., version): int</text>
+<text x="841" y="512" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ historial(id): list[Compra]</text>
+<text x="841" y="534" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ resumen(admin_id): dict</text>
+<rect x="1210" y="490" width="265" height="161" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="1210" y="490" width="265" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="1342.5" y="511" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«persistencia SQLite»</text>
+<text x="1342.5" y="534" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">BaseDatos</text>
+<text x="1226" y="577" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ ruta: str</text>
+<path d="M1210 592H1475" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="1226" y="614" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ conectar()</text>
+<text x="1226" y="636" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ inicializar()</text>
+<path d="M215 572V742H1342V651" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M605 637V742H1342V651" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M995 549V742H1342V651" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="1225" y="732" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#6b8754" text-anchor="start">conexión / transacción</text>
+<rect x="1210" y="827" width="265" height="207" rx="9" fill="#eaf1db" stroke="#d1debf" stroke-width="1.3"/>
+<text x="1228" y="853" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#213b2d" text-anchor="start">REGLAS DEL MODELO</text>
+<text x="1228" y="883" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#213b2d" text-anchor="start">• Usuario.rol: admin | usuario</text>
+<text x="1228" y="903" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#213b2d" text-anchor="start">• El registro crea usuarios.</text>
+<text x="1228" y="923" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#213b2d" text-anchor="start">• Precio entero en céntimos.</text>
+<text x="1228" y="943" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#213b2d" text-anchor="start">• Una venta por jugador.</text>
+<text x="1228" y="963" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#213b2d" text-anchor="start">• Compra atómica y simulada.</text>
+<text x="1228" y="983" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#213b2d" text-anchor="start">• Se conserva la ficha vendida.</text>
+<text x="1228" y="1003" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" fill="#213b2d" text-anchor="start">• La versión evita datos obsoletos.</text>
+<rect x="45" y="850" width="340" height="223" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="45" y="850" width="340" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="215.0" y="871" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«entidad / dataclass»</text>
+<text x="215.0" y="894" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Usuario</text>
+<text x="61" y="937" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ id: int</text>
+<text x="61" y="958" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ nombre: str</text>
+<text x="61" y="979" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ email: str</text>
+<text x="61" y="1000" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ password_hash: str</text>
+<text x="61" y="1021" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ rol: str</text>
+<path d="M45 1036H385" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="61" y="1058" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ es_admin: bool {propiedad}</text>
+<rect x="435" y="850" width="340" height="391" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="435" y="850" width="340" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="605.0" y="871" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«entidad / dataclass»</text>
+<text x="605.0" y="894" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Jugador</text>
+<text x="451" y="937" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ id: int</text>
+<text x="451" y="958" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ nombre: str</text>
+<text x="451" y="979" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ equipo: str</text>
+<text x="451" y="1000" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ nacionalidad: str</text>
+<text x="451" y="1021" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ edad: int</text>
+<text x="451" y="1042" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ posicion: str</text>
+<text x="451" y="1063" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ precio_centimos: int</text>
+<text x="451" y="1084" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ foto: str</text>
+<text x="451" y="1105" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ dorsal: int</text>
+<text x="451" y="1126" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ descripcion: str</text>
+<text x="451" y="1147" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ estado: str</text>
+<text x="451" y="1168" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ destacado: int</text>
+<text x="451" y="1189" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ version: int</text>
+<path d="M435 1204H775" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="451" y="1226" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ precio: Decimal {propiedad}</text>
+<rect x="825" y="850" width="340" height="254" rx="9" fill="#fff" stroke="#719365" stroke-width="1.3"/>
+<rect x="825" y="850" width="340" height="62" rx="9" fill="#173e2d" stroke="#173e2d" stroke-width="1.3"/>
+<text x="995.0" y="871" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#c7d6a9" text-anchor="middle">«entidad / dataclass»</text>
+<text x="995.0" y="894" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Compra</text>
+<text x="841" y="937" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ id: int</text>
+<text x="841" y="958" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ usuario_id: int</text>
+<text x="841" y="979" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ jugador_id: int</text>
+<text x="841" y="1000" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ precio_centimos: int</text>
+<text x="841" y="1021" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ fecha: str</text>
+<text x="841" y="1042" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ jugador_nombre: str</text>
+<text x="841" y="1063" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ equipo: str</text>
+<text x="841" y="1084" font-family="Consolas, monospace" font-size="12" font-weight="400" fill="#213b2d" text-anchor="start">+ foto: str</text>
+<path d="M215 750V844" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M605 750V844" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M995 750V844" fill="none" stroke="#719365" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M385 981H410V1290H1197V970H1165" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="391" y="971" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#213b2d" text-anchor="start">1</text>
+<text x="1168" y="960" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#213b2d" text-anchor="start">0..*</text>
+<text x="775" y="1281" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#527347" text-anchor="start">realiza</text>
+<path d="M775 1072H825" fill="none" stroke="#719365" stroke-width="1.5"/>
+<text x="782" y="1061" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#213b2d" text-anchor="start">1</text>
+<text x="798" y="1061" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#213b2d" text-anchor="start">0..1</text>
+<text x="805" y="1090" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" fill="#527347" text-anchor="middle">venta</text>
+<text x="44" y="1350" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" fill="#6c7c61" text-anchor="start">Línea continua: asociación y multiplicidad. Flecha discontinua: dependencia o uso.</text>
+<text x="44" y="1376" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" fill="#6c7c61" text-anchor="start">Los servicios de jugadores y compras también usan AutenticacionServicio para comprobar permisos; relación completa en docs/clases.puml.</text>
+</svg>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, foto, card with context %}
+{% block content %}
+<div class="container market-home">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="pitch-markings" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <span class="live-label"><span></span> EL MERCADO ESTÁ ABIERTO</span>
+    <h1 id="hero-title">EL PRÓXIMO<br>CRACK ESTÁ <em>AQUÍ.</em></h1>
+    <p>Los mejores talentos. Tu próximo gran fichaje.<br>Construye el equipo que siempre imaginaste.</p>
+    <a class="button button-lime" href="#mercado">Explorar jugadores {{ icon('arrow') }}</a>
+    <div class="hero-small">{{ icon('shield') }} Tu pasión. Tu estrategia. Tu equipo.</div>
+  </div>
+  {% if destacado %}
+  <div class="hero-player">
+    <span class="hero-watermark" aria-hidden="true">{{ destacado.nombre.split()[-1]|upper }}</span>
+    {{ foto(destacado, 'hero-portrait', False) }}
+    <a href="{{ url_for('web.detalle', jugador_id=destacado.id) }}" class="featured-label"><span class="featured-kicker">★ FICHAJE DESTACADO</span><strong>{{ destacado.nombre }}</strong><span>{{ destacado.equipo }} <b>{{ destacado.precio_centimos|millones }} {{ icon('arrow') }}</b></span></a>
+  </div>
+  {% else %}<div class="hero-empty">{{ icon('ball') }}</div>{% endif %}
+  <span class="hero-edition">TU ONCE IDEAL EMPIEZA HOY / 01</span>
+</section>
+<section class="market-stats" aria-label="Resumen del mercado"><div><strong>{{ '%02d'|format(total) }}<span>+</span></strong><span>Jugadores disponibles</span></div><div><strong>{{ '%02d'|format(total_equipos) }}</strong><span>Clubes en el mercado</span></div><div><strong>{{ '%02d'|format(total_paises) }}</strong><span>Países representados</span></div><p>{{ icon('globe') }} El fútbol no tiene fronteras.<br><b>Tu próximo fichaje tampoco.</b></p></section>
+<section id="mercado" class="market-section">
+  <div class="section-heading"><div><p class="eyebrow">ENCUENTRA EL TALENTO</p><h2>El mercado de fichajes<span>.</span></h2></div><span class="availability"><i></i> {{ total }} jugadores en venta</span></div>
+  <form class="filter-panel" action="{{ url_for('web.mercado') }}#mercado" method="get" role="search">
+    <label class="search-field">{{ icon('search') }}<input name="q" type="search" maxlength="100" placeholder="Busca un jugador, club o país..." aria-label="Buscar jugador, club o país" value="{{ filtros.q }}"></label>
+    <label class="filter-select"><span class="sr-only">Posición</span><select name="posicion"><option value="">Todas las posiciones</option>{% for p in posiciones %}<option value="{{ p }}" {{ 'selected' if filtros.posicion == p }}>{{ p }}</option>{% endfor %}</select></label>
+    <label class="filter-select"><span class="sr-only">Equipo</span><select name="equipo"><option value="">Todos los equipos</option>{% for e in equipos %}<option value="{{ e }}" {{ 'selected' if filtros.equipo == e }}>{{ e }}</option>{% endfor %}</select></label>
+    <label class="filter-select sort-select"><span class="sr-only">Ordenar</span><select name="orden">{% for valor, nombre in [('destacados','Destacados primero'),('precio_asc','Menor precio'),('precio_desc','Mayor precio'),('nombre','Nombre: A–Z'),('recientes','Más recientes')] %}<option value="{{ valor }}" {{ 'selected' if filtros.orden == valor }}>{{ nombre }}</option>{% endfor %}</select></label>
+    <button class="button button-dark filter-button">{{ icon('filter') }} Filtrar</button>
+  </form>
+  <div class="results-line"><p>Mostrando <strong>{{ jugadores|length }}</strong> jugadores{% if filtros.q %} para «{{ filtros.q }}»{% endif %}</p>{% if filtros.q or filtros.posicion or filtros.equipo %}<a href="{{ url_for('web.mercado') }}#mercado">Limpiar filtros {{ icon('close') }}</a>{% else %}<span>{{ icon('grid') }} Encuentra tu próximo MVP</span>{% endif %}</div>
+  <div class="players-grid">{% for jugador in jugadores %}{{ card(jugador) }}{% else %}<div class="empty-state">{{ icon('search') }}<h3>No hay jugadores en esta búsqueda</h3><p>Prueba con otro nombre, posición o equipo.</p><a href="{{ url_for('web.mercado') }}#mercado" class="button button-dark">Ver todo el mercado</a></div>{% endfor %}</div>
+</section>
+<section class="how-section" id="como-funciona"><div><p class="eyebrow">DEL MERCADO A TU EQUIPO</p><h2>Tu próximo fichaje,<br>en tres jugadas.</h2><p>Tú pones la visión. Nosotros, el talento.</p></div><div class="how-step"><span>01</span>{{ icon('user') }}<h3>Crea tu cuenta</h3><p>Entra como manager y empieza a darle forma a tu equipo ideal.</p></div><div class="how-step"><span>02</span>{{ icon('search') }}<h3>Descubre talento</h3><p>Explora el mercado y encuentra la pieza que le falta a tu once.</p></div><div class="how-step"><span>03</span>{{ icon('trophy') }}<h3>Hazlo oficial</h3><p>Confirma tu compra simulada y encuentra al jugador en Mis fichajes.</p></div></section>
+<div class="bottom-banner"><div>{{ icon('ball') }}<span>Los grandes equipos empiezan con <b>una gran decisión.</b></span></div><a href="{{ url_for('web.admin') if usuario and usuario.es_admin else (url_for('web.mis_fichajes') if usuario else url_for('web.register')) }}">Tu equipo empieza aquí {{ icon('arrow') }}</a></div>
+</div>
+{% endblock %}
