@@ -1,6 +1,7 @@
 """Prueba real en Edge con una base aislada; guarda capturas para revisar el diseño."""
 import json
 import logging
+import secrets
 import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -25,7 +26,7 @@ def ejecutar():
         carpeta = Path(temporal).resolve()
         assert carpeta.is_relative_to(instance)
         app = create_app({
-            "TESTING": True, "SECRET_KEY": "clave-solo-para-prueba-visual",
+            "TESTING": True, "SECRET_KEY": secrets.token_hex(32),
             "DATABASE": str(carpeta / "ui.sqlite"),
             "UPLOAD_FOLDER": str(carpeta / "uploads"),
         })

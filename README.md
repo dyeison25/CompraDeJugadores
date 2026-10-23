@@ -36,12 +36,12 @@ Las fotos y fuentes ya descargadas se sirven localmente. Si las copias junto con
 
 El comando `crear-demo` crea estas cuentas, sin sobrescribir ninguna existente:
 
-| Rol | Correo | Contraseña |
-| --- | --- | --- |
-| Administrador | admin@fichaje.local | Admin123! |
-| Usuario | usuario@fichaje.local | Usuario123! |
+| Rol | Correo |
+| --- | --- |
+| Administrador | admin@fichaje.local |
+| Usuario | usuario@fichaje.local |
 
-Son credenciales conocidas para la demostración local. La aplicación **no crea cuentas automáticamente** al iniciarse. Para crear un administrador propio:
+Cada cuenta nueva recibe una contraseña aleatoria que el comando muestra una sola vez en la terminal. Guarda ese valor para iniciar sesión. Las cuentas existentes conservan su contraseña, incluidas las creadas con versiones anteriores. La aplicación **no crea cuentas automáticamente** al iniciarse. Para crear un administrador propio:
 
 ```powershell
 .\.venv\Scripts\python.exe -m flask --app app crear-admin
@@ -169,3 +169,16 @@ Fuentes de las fotos: [Mbappé](https://cdn.futbin.com/content/fifa25/img/player
 Tipografías Manrope y Barlow Condensed, distribuidas bajo SIL Open Font License; los textos de licencia están en `FlastR/static/fonts/`. Iconos y diagramas son SVG locales.
 
 Referencia técnica: [fábricas de aplicaciones de Flask](https://flask.palletsprojects.com/en/stable/patterns/appfactories/) y [guía oficial de Flask](https://flask.palletsprojects.com/en/stable/quickstart/).
+
+## Analisis estatico de capas
+
+Ejecuta `python scripts/analizar_capas.py` para verificar imports absolutos y relativos, dependencias entre capas y ciclos sin iniciar Flask ni conectar a Neon. Consulta [las reglas, excepciones y resultados](docs/ARQUITECTURA.md). El workflow de GitHub Actions ejecuta esta comprobacion en pushes y pull requests.
+
+Para ejecutar también los controles de SQL y credenciales:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-analysis.txt
+.\.venv\Scripts\python.exe scripts/analizar_proyecto.py
+```
+
+Consulta [los checkers de seguridad, excepciones y límites](docs/SEGURIDAD_ESTATICA.md). El workflow ejecuta los tres controles sin conectarse a Neon.

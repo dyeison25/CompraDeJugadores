@@ -1,0 +1,21 @@
+name: Analisis estatico de capas y seguridad
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  arquitectura:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar analizadores (sin dependencias de la aplicacion)
+        run: pip install -r requirements-analysis.txt
+      - name: Probar el analizador con infracciones deliberadas
+        run: python -m unittest discover -s tests -p 'test_analizador_*.py' -v
+      - name: Verificar capas, inyeccion SQL y credenciales
+        run: python scripts/analizar_proyecto.py

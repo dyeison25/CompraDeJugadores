@@ -135,15 +135,16 @@ def create_app(test_config=None):
 
     @app.cli.command("crear-demo")
     def crear_demo():
-        """Crea dos cuentas conocidas para probar el proyecto localmente."""
-        for nombre, email, clave, rol in (
-            ("Admin Fichaje", "admin@fichaje.local", "Admin123!", "admin"),
-            ("Alex Morgan", "usuario@fichaje.local", "Usuario123!", "usuario"),
+        """Crea cuentas locales con claves aleatorias, sin modificar las existentes."""
+        for nombre, email, rol in (
+            ("Admin Fichaje", "admin@fichaje.local", "admin"),
+            ("Alex Morgan", "usuario@fichaje.local", "usuario"),
         ):
             existente = auth.buscar_por_email(email)
             if existente:
                 click.echo(f"La cuenta {email} ya existe; no se modificó.")
                 continue
+            clave = secrets.token_urlsafe(24)
             if rol == "admin":
                 auth.crear_admin(nombre, email, clave)
             else:

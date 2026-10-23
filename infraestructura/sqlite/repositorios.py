@@ -4,15 +4,24 @@ from domain.servicio.errores import ErrorDominio, NoEncontrado
 from infraestructura.mappers import UsuarioMapper, JugadorMapper, CompraMapper
 
 
+INSERTS = {
+    "usuarios": "INSERT INTO usuarios (id,nombre,email,password_hash,rol) VALUES (:id,:nombre,:email,:password_hash,:rol)",
+    "jugadores": """INSERT INTO jugadores
+        (id,nombre,equipo,nacionalidad,edad,posicion,precio_centimos,foto,dorsal,descripcion,destacado,estado,version)
+        VALUES (:id,:nombre,:equipo,:nacionalidad,:edad,:posicion,:precio_centimos,:foto,:dorsal,:descripcion,:destacado,:estado,:version)""",
+    "compras": """INSERT INTO compras
+        (id,usuario_id,jugador_id,precio_centimos,fecha,jugador_nombre,equipo,foto)
+        VALUES (:id,:usuario_id,:jugador_id,:precio_centimos,:fecha,:jugador_nombre,:equipo,:foto)""",
+}
+
+
 def insertar(db, tabla, datos):
-    # tabla y campos provienen exclusivamente de mappers internos.
+    # Lista cerrada de sentencias. Ningun nombre o valor se interpola en el SQL.
+    if tabla not in INSERTS:
+        raise ValueError("Tabla no permitida.")
     valores = dict(datos)
-    if valores.get("id") == 0:
-        valores.pop("id")
-    cursor = db.execute(
-        f"INSERT INTO {tabla} ({','.join(valores)}) VALUES ({','.join('?' for _ in valores)})",
-        tuple(valores.values()),
-    )
+    valores["id"] = valores.get("id") or None
+    cursor = db.execute(INSERTS[tabla], valores)
     return cursor.lastrowid
 
 
@@ -44,7 +53,7 @@ class JugadorRepositorioSQLite:
         self.db = db
 
     def listar(self, incluir_vendidos=False):
-        sql = "SELECT * FROM jugadores" + ("" if incluir_vendidos else " WHERE estado = 'disponible'")
+        sql = "SELECT * FROM jugadores" if incluir_vendidos else "SELECT * FROM jugadores WHERE estado = 'disponible'"
         with self.db.conectar() as db:
             filas = db.execute(sql).fetchall()
         return [JugadorMapper.desde_datos(fila) for fila in filas]
@@ -62,12 +71,14 @@ class JugadorRepositorioSQLite:
     def actualizar(self, jugador, version_esperada):
         actualizado = replace(jugador, version=version_esperada + 1)
         valores = JugadorMapper.a_datos(actualizado)
-        valores.pop("id")
+        valores["version_esperada"] = version_esperada
         with self.db.conectar() as db:
             cursor = db.execute(
-                "UPDATE jugadores SET " + ",".join(f"{campo} = ?" for campo in valores)
-                + " WHERE id = ? AND estado = 'disponible' AND version = ?",
-                (*valores.values(), jugador.id, version_esperada),
+                """UPDATE jugadores SET nombre=:nombre, equipo=:equipo, nacionalidad=:nacionalidad,
+                edad=:edad, posicion=:posicion, precio_centimos=:precio_centimos, foto=:foto,
+                dorsal=:dorsal, descripcion=:descripcion, destacado=:destacado, estado=:estado, version=:version
+                WHERE id=:id AND estado='disponible' AND version=:version_esperada""",
+                valores,
             )
             if cursor.rowcount != 1:
                 raise ErrorDominio("El jugador cambió o ya fue vendido. Recarga la página antes de editar.")

@@ -1,4 +1,3 @@
-import ast
 from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
@@ -13,19 +12,10 @@ from domain.servicio.errores import ErrorDominio
 from infraestructura.mappers import UsuarioMapper, JugadorMapper, CompraMapper
 
 
-def test_dominio_no_importa_adaptadores_ni_frameworks():
-    raiz = Path(__file__).resolve().parents[1] / "domain"
-    prohibidos = {"flask", "sqlite3", "infraestructura", "werkzeug", "sqlalchemy", "psycopg"}
-    for archivo in raiz.rglob("*.py"):
-        arbol = ast.parse(archivo.read_text(encoding="utf-8"))
-        for nodo in ast.walk(arbol):
-            if isinstance(nodo, ast.Import):
-                imports = [alias.name.split(".")[0] for alias in nodo.names]
-            elif isinstance(nodo, ast.ImportFrom) and nodo.level == 0:
-                imports = [(nodo.module or "").split(".")[0]]
-            else:
-                continue
-            assert not (set(imports) & prohibidos), str(archivo)
+def test_aislamiento_de_capas():
+    from scripts.analizar_capas import analizar
+    informe = analizar(Path(__file__).resolve().parents[1])
+    assert not informe["errores"], informe["errores"]
 
 
 @pytest.mark.parametrize("mapper,entidad", [

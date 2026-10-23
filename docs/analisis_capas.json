@@ -1,0 +1,677 @@
+{
+  "archivos": 36,
+  "importaciones": 109,
+  "errores": [],
+  "ciclos": [],
+  "excepciones": {
+    "FlastR": [
+      "infraestructura.persistencia",
+      "infraestructura.seguridad",
+      "sqlalchemy.exc"
+    ],
+    "FlastR.comandos_neon": [
+      "infraestructura.orm.modelos",
+      "sqlalchemy",
+      "sqlalchemy.exc"
+    ],
+    "infraestructura.persistencia": [
+      "domain.servicio.datos_demo"
+    ]
+  },
+  "dependencias": [
+    {
+      "origen": "domain.entidades",
+      "destino": "domain.entidades.usuario",
+      "archivo": "domain/entidades/__init__.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.entidades",
+      "destino": "domain.entidades.jugador",
+      "archivo": "domain/entidades/__init__.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.entidades",
+      "destino": "domain.entidades.compra",
+      "archivo": "domain/entidades/__init__.py",
+      "linea": 3
+    },
+    {
+      "origen": "domain.entidades.compra",
+      "destino": "dataclasses",
+      "archivo": "domain/entidades/compra.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.entidades.jugador",
+      "destino": "dataclasses",
+      "archivo": "domain/entidades/jugador.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.entidades.jugador",
+      "destino": "decimal",
+      "archivo": "domain/entidades/jugador.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.entidades.usuario",
+      "destino": "dataclasses",
+      "archivo": "domain/entidades/usuario.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.repositorios",
+      "destino": "domain.repositorios.contratos",
+      "archivo": "domain/repositorios/__init__.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.repositorios.contratos",
+      "destino": "typing",
+      "archivo": "domain/repositorios/contratos.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.repositorios.contratos",
+      "destino": "domain.entidades",
+      "archivo": "domain/repositorios/contratos.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.servicio.autenticacion_servicio",
+      "destino": "re",
+      "archivo": "domain/servicio/autenticacion_servicio.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.servicio.autenticacion_servicio",
+      "destino": "domain.entidades",
+      "archivo": "domain/servicio/autenticacion_servicio.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.servicio.autenticacion_servicio",
+      "destino": "domain.repositorios",
+      "archivo": "domain/servicio/autenticacion_servicio.py",
+      "linea": 3
+    },
+    {
+      "origen": "domain.servicio.autenticacion_servicio",
+      "destino": "domain.servicio.errores",
+      "archivo": "domain/servicio/autenticacion_servicio.py",
+      "linea": 4
+    },
+    {
+      "origen": "domain.servicio.catalogo_servicio",
+      "destino": "domain.servicio.jugador_servicio",
+      "archivo": "domain/servicio/catalogo_servicio.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.servicio.compra_servicio",
+      "destino": "datetime",
+      "archivo": "domain/servicio/compra_servicio.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.servicio.compra_servicio",
+      "destino": "domain.entidades",
+      "archivo": "domain/servicio/compra_servicio.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.servicio.compra_servicio",
+      "destino": "domain.repositorios",
+      "archivo": "domain/servicio/compra_servicio.py",
+      "linea": 3
+    },
+    {
+      "origen": "domain.servicio.compra_servicio",
+      "destino": "domain.servicio.errores",
+      "archivo": "domain/servicio/compra_servicio.py",
+      "linea": 4
+    },
+    {
+      "origen": "domain.servicio.datos_demo",
+      "destino": "domain.entidades",
+      "archivo": "domain/servicio/datos_demo.py",
+      "linea": 15
+    },
+    {
+      "origen": "domain.servicio.estadistica_servicio",
+      "destino": "domain.repositorios",
+      "archivo": "domain/servicio/estadistica_servicio.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.servicio.estadistica_servicio",
+      "destino": "domain.servicio.autenticacion_servicio",
+      "archivo": "domain/servicio/estadistica_servicio.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.servicio.jugador_servicio",
+      "destino": "dataclasses",
+      "archivo": "domain/servicio/jugador_servicio.py",
+      "linea": 1
+    },
+    {
+      "origen": "domain.servicio.jugador_servicio",
+      "destino": "decimal",
+      "archivo": "domain/servicio/jugador_servicio.py",
+      "linea": 2
+    },
+    {
+      "origen": "domain.servicio.jugador_servicio",
+      "destino": "urllib.parse",
+      "archivo": "domain/servicio/jugador_servicio.py",
+      "linea": 3
+    },
+    {
+      "origen": "domain.servicio.jugador_servicio",
+      "destino": "domain.entidades",
+      "archivo": "domain/servicio/jugador_servicio.py",
+      "linea": 5
+    },
+    {
+      "origen": "domain.servicio.jugador_servicio",
+      "destino": "domain.entidades.jugador",
+      "archivo": "domain/servicio/jugador_servicio.py",
+      "linea": 6
+    },
+    {
+      "origen": "domain.servicio.jugador_servicio",
+      "destino": "domain.repositorios",
+      "archivo": "domain/servicio/jugador_servicio.py",
+      "linea": 7
+    },
+    {
+      "origen": "domain.servicio.jugador_servicio",
+      "destino": "domain.servicio.errores",
+      "archivo": "domain/servicio/jugador_servicio.py",
+      "linea": 8
+    },
+    {
+      "origen": "infraestructura.mappers",
+      "destino": "infraestructura.mappers.usuario_mapper",
+      "archivo": "infraestructura/mappers/__init__.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.mappers",
+      "destino": "infraestructura.mappers.jugador_mapper",
+      "archivo": "infraestructura/mappers/__init__.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.mappers",
+      "destino": "infraestructura.mappers.compra_mapper",
+      "archivo": "infraestructura/mappers/__init__.py",
+      "linea": 3
+    },
+    {
+      "origen": "infraestructura.mappers.base",
+      "destino": "dataclasses",
+      "archivo": "infraestructura/mappers/base.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.mappers.base",
+      "destino": "datetime",
+      "archivo": "infraestructura/mappers/base.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.mappers.compra_mapper",
+      "destino": "domain.entidades",
+      "archivo": "infraestructura/mappers/compra_mapper.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.mappers.compra_mapper",
+      "destino": "infraestructura.mappers.base",
+      "archivo": "infraestructura/mappers/compra_mapper.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.mappers.jugador_mapper",
+      "destino": "domain.entidades",
+      "archivo": "infraestructura/mappers/jugador_mapper.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.mappers.jugador_mapper",
+      "destino": "infraestructura.mappers.base",
+      "archivo": "infraestructura/mappers/jugador_mapper.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.mappers.usuario_mapper",
+      "destino": "domain.entidades",
+      "archivo": "infraestructura/mappers/usuario_mapper.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.mappers.usuario_mapper",
+      "destino": "infraestructura.mappers.base",
+      "archivo": "infraestructura/mappers/usuario_mapper.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.orm.conexion",
+      "destino": "sqlalchemy",
+      "archivo": "infraestructura/orm/conexion.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.orm.conexion",
+      "destino": "sqlalchemy.engine",
+      "archivo": "infraestructura/orm/conexion.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.orm.conexion",
+      "destino": "sqlalchemy.exc",
+      "archivo": "infraestructura/orm/conexion.py",
+      "linea": 3
+    },
+    {
+      "origen": "infraestructura.orm.conexion",
+      "destino": "sqlalchemy.orm",
+      "archivo": "infraestructura/orm/conexion.py",
+      "linea": 4
+    },
+    {
+      "origen": "infraestructura.orm.conexion",
+      "destino": "infraestructura.orm.modelos",
+      "archivo": "infraestructura/orm/conexion.py",
+      "linea": 6
+    },
+    {
+      "origen": "infraestructura.orm.mappers",
+      "destino": "infraestructura.mappers",
+      "archivo": "infraestructura/orm/mappers.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.orm.mappers",
+      "destino": "infraestructura.orm.modelos",
+      "archivo": "infraestructura/orm/mappers.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.orm.modelos",
+      "destino": "sqlalchemy",
+      "archivo": "infraestructura/orm/modelos.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.orm.modelos",
+      "destino": "sqlalchemy.orm",
+      "archivo": "infraestructura/orm/modelos.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.orm.repositorios",
+      "destino": "dataclasses",
+      "archivo": "infraestructura/orm/repositorios.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.orm.repositorios",
+      "destino": "sqlalchemy",
+      "archivo": "infraestructura/orm/repositorios.py",
+      "linea": 3
+    },
+    {
+      "origen": "infraestructura.orm.repositorios",
+      "destino": "sqlalchemy.exc",
+      "archivo": "infraestructura/orm/repositorios.py",
+      "linea": 4
+    },
+    {
+      "origen": "infraestructura.orm.repositorios",
+      "destino": "domain.servicio.errores",
+      "archivo": "infraestructura/orm/repositorios.py",
+      "linea": 6
+    },
+    {
+      "origen": "infraestructura.orm.repositorios",
+      "destino": "infraestructura.mappers",
+      "archivo": "infraestructura/orm/repositorios.py",
+      "linea": 7
+    },
+    {
+      "origen": "infraestructura.orm.repositorios",
+      "destino": "infraestructura.orm.mappers",
+      "archivo": "infraestructura/orm/repositorios.py",
+      "linea": 8
+    },
+    {
+      "origen": "infraestructura.orm.repositorios",
+      "destino": "infraestructura.orm.modelos",
+      "archivo": "infraestructura/orm/repositorios.py",
+      "linea": 9
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "dataclasses",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "domain.repositorios",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 3
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "domain.servicio.datos_demo",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 4
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "infraestructura.orm.conexion",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 18
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "infraestructura.orm.repositorios",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 19
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "infraestructura.sqlite.base_datos",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 33
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "infraestructura.sqlite.repositorios",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 34
+    },
+    {
+      "origen": "infraestructura.persistencia",
+      "destino": "sqlalchemy",
+      "archivo": "infraestructura/persistencia.py",
+      "linea": 23
+    },
+    {
+      "origen": "infraestructura.seguridad",
+      "destino": "werkzeug.security",
+      "archivo": "infraestructura/seguridad.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.sqlite.base_datos",
+      "destino": "sqlite3",
+      "archivo": "infraestructura/sqlite/base_datos.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.sqlite.base_datos",
+      "destino": "contextlib",
+      "archivo": "infraestructura/sqlite/base_datos.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.sqlite.base_datos",
+      "destino": "pathlib",
+      "archivo": "infraestructura/sqlite/base_datos.py",
+      "linea": 3
+    },
+    {
+      "origen": "infraestructura.sqlite.repositorios",
+      "destino": "sqlite3",
+      "archivo": "infraestructura/sqlite/repositorios.py",
+      "linea": 1
+    },
+    {
+      "origen": "infraestructura.sqlite.repositorios",
+      "destino": "dataclasses",
+      "archivo": "infraestructura/sqlite/repositorios.py",
+      "linea": 2
+    },
+    {
+      "origen": "infraestructura.sqlite.repositorios",
+      "destino": "domain.servicio.errores",
+      "archivo": "infraestructura/sqlite/repositorios.py",
+      "linea": 3
+    },
+    {
+      "origen": "infraestructura.sqlite.repositorios",
+      "destino": "infraestructura.mappers",
+      "archivo": "infraestructura/sqlite/repositorios.py",
+      "linea": 4
+    },
+    {
+      "origen": "FlastR",
+      "destino": "os",
+      "archivo": "FlastR/__init__.py",
+      "linea": 1
+    },
+    {
+      "origen": "FlastR",
+      "destino": "secrets",
+      "archivo": "FlastR/__init__.py",
+      "linea": 2
+    },
+    {
+      "origen": "FlastR",
+      "destino": "datetime",
+      "archivo": "FlastR/__init__.py",
+      "linea": 3
+    },
+    {
+      "origen": "FlastR",
+      "destino": "pathlib",
+      "archivo": "FlastR/__init__.py",
+      "linea": 4
+    },
+    {
+      "origen": "FlastR",
+      "destino": "click",
+      "archivo": "FlastR/__init__.py",
+      "linea": 6
+    },
+    {
+      "origen": "FlastR",
+      "destino": "flask",
+      "archivo": "FlastR/__init__.py",
+      "linea": 7
+    },
+    {
+      "origen": "FlastR",
+      "destino": "domain.entidades.jugador",
+      "archivo": "FlastR/__init__.py",
+      "linea": 9
+    },
+    {
+      "origen": "FlastR",
+      "destino": "infraestructura.persistencia",
+      "archivo": "FlastR/__init__.py",
+      "linea": 10
+    },
+    {
+      "origen": "FlastR",
+      "destino": "infraestructura.seguridad",
+      "archivo": "FlastR/__init__.py",
+      "linea": 11
+    },
+    {
+      "origen": "FlastR",
+      "destino": "FlastR.configuracion",
+      "archivo": "FlastR/__init__.py",
+      "linea": 12
+    },
+    {
+      "origen": "FlastR",
+      "destino": "domain.servicio.autenticacion_servicio",
+      "archivo": "FlastR/__init__.py",
+      "linea": 13
+    },
+    {
+      "origen": "FlastR",
+      "destino": "domain.servicio.jugador_servicio",
+      "archivo": "FlastR/__init__.py",
+      "linea": 14
+    },
+    {
+      "origen": "FlastR",
+      "destino": "domain.servicio.compra_servicio",
+      "archivo": "FlastR/__init__.py",
+      "linea": 15
+    },
+    {
+      "origen": "FlastR",
+      "destino": "domain.servicio.catalogo_servicio",
+      "archivo": "FlastR/__init__.py",
+      "linea": 16
+    },
+    {
+      "origen": "FlastR",
+      "destino": "domain.servicio.estadistica_servicio",
+      "archivo": "FlastR/__init__.py",
+      "linea": 17
+    },
+    {
+      "origen": "FlastR",
+      "destino": "domain.servicio.errores",
+      "archivo": "FlastR/__init__.py",
+      "linea": 18
+    },
+    {
+      "origen": "FlastR",
+      "destino": "FlastR.rutas",
+      "archivo": "FlastR/__init__.py",
+      "linea": 110
+    },
+    {
+      "origen": "FlastR",
+      "destino": "FlastR.comandos_neon",
+      "archivo": "FlastR/__init__.py",
+      "linea": 154
+    },
+    {
+      "origen": "FlastR",
+      "destino": "sqlalchemy.exc",
+      "archivo": "FlastR/__init__.py",
+      "linea": 157
+    },
+    {
+      "origen": "FlastR.comandos_neon",
+      "destino": "json",
+      "archivo": "FlastR/comandos_neon.py",
+      "linea": 1
+    },
+    {
+      "origen": "FlastR.comandos_neon",
+      "destino": "click",
+      "archivo": "FlastR/comandos_neon.py",
+      "linea": 3
+    },
+    {
+      "origen": "FlastR.comandos_neon",
+      "destino": "sqlalchemy",
+      "archivo": "FlastR/comandos_neon.py",
+      "linea": 4
+    },
+    {
+      "origen": "FlastR.comandos_neon",
+      "destino": "sqlalchemy.exc",
+      "archivo": "FlastR/comandos_neon.py",
+      "linea": 5
+    },
+    {
+      "origen": "FlastR.comandos_neon",
+      "destino": "infraestructura.orm.modelos",
+      "archivo": "FlastR/comandos_neon.py",
+      "linea": 7
+    },
+    {
+      "origen": "FlastR.configuracion",
+      "destino": "os",
+      "archivo": "FlastR/configuracion.py",
+      "linea": 1
+    },
+    {
+      "origen": "FlastR.configuracion",
+      "destino": "pathlib",
+      "archivo": "FlastR/configuracion.py",
+      "linea": 2
+    },
+    {
+      "origen": "FlastR.configuracion",
+      "destino": "dotenv",
+      "archivo": "FlastR/configuracion.py",
+      "linea": 3
+    },
+    {
+      "origen": "FlastR.imagenes",
+      "destino": "warnings",
+      "archivo": "FlastR/imagenes.py",
+      "linea": 1
+    },
+    {
+      "origen": "FlastR.imagenes",
+      "destino": "pathlib",
+      "archivo": "FlastR/imagenes.py",
+      "linea": 2
+    },
+    {
+      "origen": "FlastR.imagenes",
+      "destino": "uuid",
+      "archivo": "FlastR/imagenes.py",
+      "linea": 3
+    },
+    {
+      "origen": "FlastR.imagenes",
+      "destino": "flask",
+      "archivo": "FlastR/imagenes.py",
+      "linea": 5
+    },
+    {
+      "origen": "FlastR.imagenes",
+      "destino": "PIL",
+      "archivo": "FlastR/imagenes.py",
+      "linea": 6
+    },
+    {
+      "origen": "FlastR.imagenes",
+      "destino": "domain.servicio.errores",
+      "archivo": "FlastR/imagenes.py",
+      "linea": 8
+    },
+    {
+      "origen": "FlastR.rutas",
+      "destino": "functools",
+      "archivo": "FlastR/rutas.py",
+      "linea": 1
+    },
+    {
+      "origen": "FlastR.rutas",
+      "destino": "flask",
+      "archivo": "FlastR/rutas.py",
+      "linea": 3
+    },
+    {
+      "origen": "FlastR.rutas",
+      "destino": "domain.servicio.errores",
+      "archivo": "FlastR/rutas.py",
+      "linea": 5
+    },
+    {
+      "origen": "FlastR.rutas",
+      "destino": "FlastR.imagenes",
+      "archivo": "FlastR/rutas.py",
+      "linea": 6
+    }
+  ]
+}
